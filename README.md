@@ -97,9 +97,9 @@ The app will be available at:
 
 | Method | Endpoint  | Description                     |
 | ------ | --------- | ------------------------------- |
-| `GET`  | `/images` | Fetch list of images            |
+| `GET`  | `/images` | Fetch list of images urls           |
 | `POST` | `/vote`   | Vote on an image (like/dislike) |
-| `GET`  | `/votes`  | Get vote counts for all images  |
+| `GET`  | `/metadata`  | Get vote counts for all images  |
 | `GET`  | `/export` | Download votes as CSV           |
 
 ---
