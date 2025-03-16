@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: votes_db
+      POSTGRES_LOGGING: "stderr"
+      POSTGRES_LOG_STATEMENT: "none"
+      POSTGRES_LOG_MIN_MESSAGES: "warning"
+      POSTGRES_LOG_MIN_ERROR_STATEMENT: "error"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db:5432/votes_db
+      USE_MOCK_DB: "false"
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend

@@ -1,0 +1,10 @@
+# Python (Backend)
+__pycache__/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+*.csv
+*.db
