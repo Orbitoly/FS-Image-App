@@ -11,6 +11,7 @@ This is a **full-stack web application** that allows users to view images, vote 
 - **Persistent database** using PostgreSQL
 - **Fully Dockerized** (Runs with a single command)
 - **Database migrations** with Alembic
+- **Unit tests** with Vitest
 - **E2E tests** with Cypress
 
 ## **Technology Stack**
@@ -30,6 +31,7 @@ This is a **full-stack web application** that allows users to view images, vote 
 - **TypeScript** - Type-safe JavaScript
 - **Tailwind CSS** - Utility-first CSS framework
 - **Vite** - Next generation frontend tooling
+- **Vitest** - High performant Unit testing framework
 - **Cypress** - End-to-end testing framework for web applications
 
 ## **Setup & Installation**
@@ -44,8 +46,8 @@ This is a **full-stack web application** that allows users to view images, vote 
 Clone the repository:
 
 ```sh
-git clone https://github.com/Orbitoly/Image-Voting-System
-cd Image-Voting-System
+git clone https://github.com/Orbitoly/FS-Image-App
+cd FS-Image-App
 ```
 
 Create the environment file for the frontend:
